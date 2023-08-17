@@ -1,3 +1,7 @@
+riscv64-unknown-elf-gcc -march=rv64g -mabi=lp64 -static -mcmodel=medany -fvisibility=hidden -nostdlib -nostartfiles -I Fuzzer1/Template/include -I /usr/include -T Fuzzer1/Template/include/link.ld -I Fuzzer1/Template/include/p output/.input_1_copy.S -o output/.input_1_copy.elf
+
+elf2hex --bit-width 64 --input output/.input_1_copy.elf --output output/.input_1_copy.hex
+
 # DifuzzRTL: Differential Fuzz Testing to Find CPU Bugs 
 
 ## Introduction

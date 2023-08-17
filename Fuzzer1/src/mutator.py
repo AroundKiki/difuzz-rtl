@@ -99,7 +99,7 @@ class rvMutator():
         self.phase = GENERATION
 
         self.num_prefix = 3
-        self.num_words = 100
+        self.num_words = 20        #生成的长度
         self.num_suffix = 5
 
         self.max_nWords = 200

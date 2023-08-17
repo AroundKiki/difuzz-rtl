@@ -1,4 +1,16 @@
 __pycache__
 .ccls-cache
+# *.c
+# *.h
+# *.cc
+*.S
+*.hex
+*.elf
+# *.in
+# *.guess
+# *.ld
+# *.sub
+# *.ac
+
 
 build

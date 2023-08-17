@@ -109,7 +109,8 @@ def Run(dut, toplevel,
                 debug_print('[DifuzzRTL] Bug -- {} [{}]'. \
                             format(mNum, cause), debug, not match or (ret != SUCCESS))
 
-            if coverage > last_coverage:
+            if coverage > last_coverage:    #
+                #TODO print
                 if multicore:
                     cNum = manager.read_num('cNum')
                     manager.write_num('cNum', cNum + 1)

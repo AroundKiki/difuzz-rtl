@@ -19,6 +19,7 @@ class rvPreProcessor():
         self.cc_args = [ cc, '-march=rv64g', '-mabi=lp64', '-static', '-mcmodel=medany',
                          '-fvisibility=hidden', '-nostdlib', '-nostartfiles',
                          '-I', '{}/include'.format(template),
+                         '-I', '/usr/include',
                          '-T', '{}/include/link.ld'.format(template) ]
 
         self.elf2hex_args = [ elf2hex, '--bit-width', '64', '--input' ]
@@ -103,6 +104,8 @@ class rvPreProcessor():
         fd.close()
 
         assembly = []
+
+        # templete填充代码
         for line in template_lines:
             assembly.append(line)
             if '_fuzz_prefix:' in line:

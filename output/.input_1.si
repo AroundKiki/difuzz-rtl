@@ -1,0 +1,438 @@
+p-s
+
+_p0:    csrrci x14, stval, 0                      
+_p1:    csrrsi x10, sip, 31                       
+_p2:    csrrsi x10, sie, 18                       
+_l0:    csrrwi x16, stval, 7                      0000
+_l1:    fcvt.l.s x14, f7, rne                     0000
+_l2:    la x7, d_5_27                             0000
+        addi x7, x7, 0                            0000
+        amomax.d x14, x18, (x7)                   0000
+_l3:    fcvt.w.s x10, f18, rne                    0000
+_l4:    csrrwi x5, pmpaddr4, 23                   0000
+_l5:    la x27, _l14                              0000
+        csrrw zero, uepc, x27                     0000
+        uret                                      0000
+_l6:    la x4, d_3_20                             0000
+        addi x4, x4, -16                          0000
+        amoor.d x5, x27, (x4)                     0000
+_l7:    bltu x11, x7, _l14                        0000
+_l8:    la x8, d_2_6                              0000
+        addi x8, x8, 24                           0000
+        amomax.w x16, x19, (x8)                   0000
+_l9:    beq x1, x13, _l12                         0000
+_l10:   fclass.s x13, f27                         0000
+_l11:   la x2, d_1_17                             0000
+        sw x6, -24(x2)                            0000
+_l12:   fnmsub.s f27, f9, f27, f5, rne            0000
+_l13:   addi x26, x23, 222                        0000
+_l14:   la x16, d_2_16                            0000
+        addi x16, x16, -20                        0000
+        amomaxu.w x22, x24, (x16)                 0000
+_l15:   csrrsi x26, mtval, 25                     0000
+_l16:   la x13, d_1_24                            0000
+        addi x13, x13, 16                         0000
+        amoor.d x2, x28, (x13)                    0000
+_l17:   fcvt.w.s x24, f10, rne                    0000
+_l18:   la x2, d_0_2                              0000
+        lw x12, -24(x2)                           0000
+_l19:   fmul.s f1, f5, f19, rne                   0000
+_s0:    la x3, d_5_4                              
+        addi x3, x3, -28                          
+        amominu.w x5, x26, (x3)                   
+_s1:    la x7, d_0_23                             
+        lw x2, 0(x7)                              
+_s2:    la x29, d_1_2                             
+        addi x29, x29, 0                          
+        amoswap.d x28, x27, (x29)                 
+_s3:    la x18, d_0_3                             
+        addi x18, x18, -24                        
+        amoswap.w x30, x12, (x18)                 
+_s4:    la x4, d_0_3                              
+        addi x4, x4, 28                           
+        sc.w x17, x18, (x4)                       
+data:
+171ef026b60a8e15
+eb89a90680232f90
+b5e01ff3ccdbabdc
+cbd26001bbdcf337
+5dd82c78ad5ee9e3
+4ef03c1a4d81f9bd
+7a461ade58bdf3e7
+5e9fda1791bf4229
+b40c2490af5251de
+50cdebdb00503469
+0b4f3e89d2355e9a
+7e8b393b7a06406f
+fa27a36afe627924
+dcb408f142fb0bdb
+1e0e84551ecda67e
+90ef73eba9e66ba1
+9e6ddfec034b4583
+54b444c25498d2c0
+ddfa66c536db8241
+75975ea4faf5ff0c
+7a326c7b328d13e8
+6adde153eb44c6a1
+8d5e2d7f4b7f853d
+5e544f922ad81833
+c060cb62af885744
+7d1312eb799ccc33
+d47f2a778fdc145a
+a0fb8179f0fa100b
+5bb8a643cf44b8bc
+77f013ed99fc97c1
+2c557058dc8d60bf
+7d5dfbe6a0018dbb
+fa218c7cf8a3ae02
+c664a3422836a48c
+693ba218a6a7916a
+9935e4a70dd96890
+47c2a0d63435c021
+572dde704c2bd219
+eb8a8eae915a0315
+f697b8cc8c481a6a
+240196100ca8b49b
+8481eb63ccdd9eb6
+a1a0e74af76dda5f
+5d519ea420efafee
+872b4f0a63856954
+22c50f1ae0bfd937
+d227036232533ff5
+3335532f7834f284
+8998f1e755506d47
+f3df1c45b9a007d8
+324d43854f99d0bf
+90a13ae4a3ce75d9
+1ad68021b90e98d7
+fa31e560aeb366d7
+f31ea98f04353358
+353e5685f49a6f92
+81cc2f7fb9946838
+c64e3616e9afe755
+bb4f7e01b9598adc
+b720ce68fefafd6a
+e2b4740436802044
+2a5e1b9ac223ba5f
+d59cab0f65608525
+058ae634830bbd1f
+9ef11d435d541ec0
+719eb604327ba265
+73f8e5a2c81ffbc2
+0c3dda770d9b8c15
+651492c47d9a72e3
+a448195ee6d56701
+46df3d296c7f10c9
+dc9a307e8cc61ef4
+a1f0b327bf7878f7
+48d2c40a3a9f7a6f
+bbf5ad0a43041da1
+1f4c66044108059e
+b6b3ceb881f177ca
+f9e6c07ef49de3ca
+7cf32d52c2d52591
+539be4952fd57356
+b86ac38ca4f1e6ce
+a6481febd6e41119
+f94fefa6218795dc
+94ce6dc4c5106ac9
+e9496c5417b43691
+e732ea59bb414a36
+45c2d0571c03d980
+893e27965dd179c2
+1ed6054673fb1881
+d74e4b361eed5206
+d38fc77858cba56a
+a1e87fcc255aca08
+ef17196c2d8d774e
+7e639f231cecf26d
+83d9272932dc4519
+c4953601c5f9ef1c
+17fcf78b455a6c23
+70d80c07b4023beb
+36a18e5ac868874b
+dc594bc24e61d272
+46cb65d34703b1b9
+80463882b7d7ae07
+988705168aa6ed33
+ce26d88bdd6cd6e8
+88c6d58333ae5614
+ec4fe1f3c5c0c82e
+b8b9a3a6959d36a0
+62584adbdd89bfb1
+89dc84239c09e22d
+8e37f45f459181ac
+5457397d31a258f3
+ad0f13c9ca1b75cb
+420b6e2a83a8530d
+c65df445c1c48112
+7ca47f1190785487
+1557306e8ef75f0b
+436345b262dca05e
+7dd6c9523e4672b5
+fbf50da7da0f8693
+27aa529f1a47cd94
+558c72c89c158bbf
+1093e950629de92d
+d2a32b1af3b86442
+95f598f283248e27
+09d57c75b49bf822
+2a0521553bef6eea
+84405eedf913305a
+bf795ab6439c3a6f
+e3a8ce335a4bbe88
+0424a8a69c320f30
+b5289f7eb1942906
+f4587440cc86b304
+67a10d02395e3d70
+dab16268d550b2a7
+90f824f84a7c0e46
+d2294a2f1a8ea1d9
+73c898785cb772e2
+84105fc90333a342
+681199e94d53cfc0
+e9aafe1c59ee494b
+a5a085a92258fe92
+619c110e12baa4f1
+f63ceec9dd27481f
+ebf2813181f716d4
+e03448ca54073b18
+58c7625648058782
+bdbc9e6777c0278a
+e3a15fd13f3b4c1b
+841b52e3c671108d
+4e26e4439f0b8826
+daccdf698fe4b8ea
+c7cda23da87e7295
+d9f5f5bc671614b8
+2e87e5f4fde96e3d
+bd529ef854297084
+c5335efde5376047
+9cd2261d8295c899
+756184c64f988da1
+8c4f01a21fbec789
+ceb9f1f206c379d6
+34428593e7ecbc71
+9f761021be3d11eb
+1f35d1970cf3bd13
+81b9664de986d416
+64793f538f0c1d7c
+79a5ee289522107b
+190d9f4f18176980
+1ea4bf6a3fa54457
+d6de2183df043665
+25c9a919665d5f97
+ae3df1539c429f06
+6b61c5243e77c0ea
+28ebcf6781c0b6a0
+70e26d5dbac607f1
+3a564ab39d1f87e5
+c77ff65605a71a51
+dd289fb1d0066725
+29814af726555750
+79199ed4af3f4b5f
+c641b1a0a5037d79
+07375e5abcb564d3
+3abdb90cd00c29a3
+5068fb2b71136e72
+065ea11ca775199a
+850e1996737d6472
+05baae3c4ba1c1d0
+e048717c641f6f8e
+63ae90eed7559fa0
+bdf6a490fc68596c
+1738cf2543c78f8e
+839548e83fe4c6ea
+59fdbddb484561c1
+7e0c476e6b3abadb
+ab5379a9a5c60e6a
+cf1e85d794b1556d
+9dde8800879096ca
+e54138a2f6aad20c
+aa20aabd04050e6e
+c7cde133ddddce13
+053cfd66a7ed5195
+fa1dd8e1d8404421
+8ca46aabddc0a6f5
+2b3e7074c1ada1ba
+0c684fb18853d566
+b717c3cbc361ed2a
+17e9b07bbf38a318
+5292a5c799f38e4a
+fe40bbb03316ae39
+d385863df913ba45
+10bea5beaefa89d3
+705a4fd41dcd9004
+7584f0ab2a1e0481
+a3e55cfabade670a
+5ad5a082565d01a9
+998dce7a8c289c09
+3187e55c39a1a887
+09cdc3b14d0b2670
+4e20eb1e04ca1b26
+c355b6ac80e0fba6
+176a2b883eab26d9
+8bc85bd28901e157
+3db1efb14d144a20
+63ba30ab37bf95c4
+c3f24d112d281c5f
+fcec6eac4ac3a141
+436a1bbc930daf9d
+8046816f7ceb2824
+786edc1d5a337576
+363131105f729e59
+3b5956973b9c48ff
+9c63662d04f8a940
+31eb567f9dea8dd4
+59f8d4a055678e0f
+cb3e7739b175e46e
+329bd261e7276748
+7d13bb8f72127ff9
+13a8f6b0c4974f46
+faa2b652d5c5e3c0
+e0bccae390c7e776
+d65ca98286252e58
+bb5ea4aeb8e9e190
+33e2fed4d094d6d5
+c16c9eef053f1484
+4c9ae69d15bc3530
+c97dd072d908b18a
+b2621ab6135c5722
+3a4ab511a5dcc1f3
+7e0c80ac057f4314
+eb81391c42be5ad1
+14d69a9704f7bf47
+0188c34d4372e592
+4c5e8e29165838d9
+39a2b0def93136e7
+31bc6e014acb25a3
+40006abd77c30a78
+1e84f97c8d275b85
+bd1b820007a97448
+dd541cd24be48821
+765836b2db2d8790
+72671284c346c9bb
+f629ff5007ca55b1
+43f6fcf2fb642414
+628b992f4de20b3e
+0b2344528f679106
+3653cdb4ad93a0d1
+9ff74b8814abb1c8
+d17ba61cc8c64599
+8fa4be94c5d2f22b
+6643c4eb74189001
+601090985560b1a0
+34b62cc165d7da44
+89794fb60e92067f
+cd0974abf840aeb2
+c9343cd1f94edd00
+684c90c0e48e7e0f
+f87e22a374fcf542
+9ffd35c43a7755ab
+b20aa0b71fe08513
+d336490c3a8f429d
+7e077a3f2623ec30
+db42f145cf82fcad
+0499db5767dd2e82
+99dae2f5355cafa2
+d3fed9777b6a2a6c
+bbe26e6b54ea33fe
+56e5cb756a449f1b
+22716201f7202934
+a0aae809202d0fa5
+51d23be87d12e986
+aeaf8bf358121a3a
+6f27f3b7d20cf9ee
+d5442eaae7ae2385
+9c407a83b95c1887
+c6a0f19c13c689ae
+871a3673d93d7734
+018e4df9b76b1b9f
+eb3a4235e77f8d62
+0bcf330b94ba2596
+c9305ce87a96d6fd
+40fc13cfa4baa6a0
+08856fa5804a25a8
+8dccae3479d23551
+a52c7016c19d8ea6
+d8c4f16c731a2aed
+8bccfcd25a0a8b50
+b0a9927badc2ebc4
+8fdfdb64bd2c77e9
+2707f1349378b993
+42919c6b7fba8581
+ab55463645f5b630
+706faec07d4c6cf3
+53c870c5903d4db4
+04a26844bc55137c
+8281a00a803b406e
+be0f2f951addc8c6
+d0af8ad2c29747c8
+e8016cff204caab3
+d81b0f4963bde456
+2ba671a62c01db0b
+9f8de3dcb4b7b2d3
+5d259d4b40b0a228
+e92cb82ac9444518
+3afcf5e74dfda537
+6230c8c1a14f7ae4
+28038c27b01f8121
+b9b853f5f7b18975
+8ea7232839a7079d
+a33c80c8fafe0460
+346cbcb5ecd2dfb3
+524213cb6bb6cb10
+ea47ad658acdadf2
+dc8adf8157df5c7e
+4d9cc1d3291ba9cf
+c663bb4950c43e1d
+d6d0ad08fcde7cb1
+c483c95bacefe6c8
+33ca2628d0fb0589
+ebe0ff606b7d9bf4
+967d92209925ab31
+081fa58af3e9e576
+187f47b875a28595
+4ed8394db68d5b6b
+bf3b4a73bdafba33
+9b1646ed6c77fcb9
+bb84b39703934930
+45d1c892828ce8d0
+b609134cb0fb62ba
+324b6570d7eb92ed
+e454c9c7d00e7c9f
+8fa31a8afe851200
+67b1bf9d9270efe1
+fdef93f1e7985904
+79249546708cfd3a
+725f294ef26c7871
+2688fc0be04f7a23
+eb9a3931d7f5ad9a
+88a3350ef396b74c
+f52d8e614a83b68f
+0a89346c9e6038d1
+bad792f9ed3cc308
+72882317f7739c7e
+8d92abdb6eee9c33
+f715ae1a8eb5453f
+f98c92311a2ce8cf
+a779cf82ac8926bc
+aa204956827950c2
+f468c7cc80d78ce5
+328660edd445dd16
+7a2c498a54140c3f
+61d9918a3697f060
+5004395d7c24db17
+dae48aab0305f6a7
+dab8f425dd1e12c3
+0cdab9c7ef2e7be8
+f6e5e76644081a02
+4f55700aff3f5543
+ae64cb2da726d0d7
+822d3c2b405d403e
+fd18aa653077fa39
+2ce812471be1974a
+234cca011f60b068
+6ef262f89572aa7a
+39c7dad581d11984
+21a7fe0305ffb164
