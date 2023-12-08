@@ -23,16 +23,21 @@ sys.path.append("/root/workDir/difuzz-rtl/Fuzzer1/RTLSim/src")
 sys.path.append("/root/workDir/difuzz-rtl/Fuzzer1/src")
 sys.path.append("/root/elf2hex/elf2hex-1.0.1")
 
+os.chdir('/root/workDir/difuzz-rtl')
+
+
 from src.mutator import simInput, rvMutator
 
 
 #===============参数区=================
-filepath = "model_output/1.txt"
+filepath = "model_output/8_5000sample.txt"
 
 templates = [ 'p-m', 'p-s', 'p-u',
               'v-u']
 version = 0
-test_template = "Fuzzer1/Template" + '/rv64-{}.S'.format(templates[version])
+# test_template = "Fuzzer1/Template" + '/rv64-{}.S'.format(templates[version])
+test_template = 'Fuzzer1/Template/crt_template.S'
+
 
 no_guide = False
 mutator = rvMutator(no_guide=no_guide)
@@ -177,10 +182,10 @@ if __name__=="__main__":
     dataset = group_command(formatted_lines)
     for i,data in enumerate(dataset):
         assembly = generate_source(data)
-        fd = open("output_source/source"+str(i)+".S", 'w')
+        fd = open("output_source/crt5000/source"+str(i)+".S", 'w')
         fd.writelines(assembly)
         fd.close()
-        s_to_hex("output_source/source"+str(i)+".S")
+        # s_to_hex("output_source/source"+str(i)+".S")
     
     pass
 
