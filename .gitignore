@@ -15,3 +15,5 @@ __pycache__
 *.txt
 
 build
+
+!crt_template.S
