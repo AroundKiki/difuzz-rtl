@@ -17,13 +17,13 @@ import sys
 import subprocess
 
 
-sys.path.append("/root/workDir/difuzz-rtl/Fuzzer1")
-sys.path.append("/root/workDir/difuzz-rtl")
-sys.path.append("/root/workDir/difuzz-rtl/Fuzzer1/RTLSim/src")
-sys.path.append("/root/workDir/difuzz-rtl/Fuzzer1/src")
-sys.path.append("/root/elf2hex/elf2hex-1.0.1")
+sys.path.append("/home/cuixutong/difuzz-rtl/Fuzzer1")
+sys.path.append("/home/cuixutong/difuzz-rtl")
+sys.path.append("/home/cuixutong/difuzz-rtl/Fuzzer1/RTLSim/src")
+sys.path.append("/home/cuixutong/difuzz-rtl/Fuzzer1/src")
+# sys.path.append("/root/elf2hex/elf2hex-1.0.1")
 
-os.chdir('/root/workDir/difuzz-rtl')
+os.chdir('/home/cuixutong/difuzz-rtl')
 
 
 from src.mutator import simInput, rvMutator
@@ -150,14 +150,14 @@ def s_to_hex(source_path):
     else: DINTR = []
     extra_args = DINTR + [ '-I', '{}/include/p'.format(template) ]
 
-    base = "output_source"
-    si_name = base + '/.input_{}.si'.format(proc_num)
-    asm_name = base + '/.input_{}.S'.format(proc_num)
-    elf_name = base + '/.input_{}.elf'.format(proc_num)
-    hex_name = base + '/.input_{}.hex'.format(proc_num)
-    sym_name = base + '/.input_{}.symbols'.format(proc_num)
-    rtl_intr_name = base + '/.input_{}.rtl.intr'.format(proc_num)
-    isa_intr_name = base + '/.input_{}.isa.intr'.format(proc_num)
+    # base = "output_source/8_5000"
+    # si_name = base + '/.input_{}.si'.format(proc_num)
+    # asm_name = base + '/.input_{}.S'.format(proc_num)
+    # elf_name = base + '/.input_{}.elf'.format(proc_num)
+    # hex_name = base + '/.input_{}.hex'.format(proc_num)
+    # sym_name = base + '/.input_{}.symbols'.format(proc_num)
+    # rtl_intr_name = base + '/.input_{}.rtl.intr'.format(proc_num)
+    # isa_intr_name = base + '/.input_{}.isa.intr'.format(proc_num)
 
     asm_name = source_path
     elf_name = source_path.split(".")[0] + ".elf"
@@ -182,7 +182,7 @@ if __name__=="__main__":
     dataset = group_command(formatted_lines)
     for i,data in enumerate(dataset):
         assembly = generate_source(data)
-        fd = open("output_source/crt5000/source"+str(i)+".S", 'w')
+        fd = open("output_source/source"+str(i)+".S", 'w')
         fd.writelines(assembly)
         fd.close()
         # s_to_hex("output_source/source"+str(i)+".S")

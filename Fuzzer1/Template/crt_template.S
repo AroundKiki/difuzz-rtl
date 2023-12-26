@@ -53,7 +53,7 @@ _start:
   # enable FPU and accelerator if present
   li t0, MSTATUS_FS | MSTATUS_XS | MSTATUS_VS
   csrs mstatus, t0
-  csrw vstart, x0
+  # csrw vstart, x0
 
   # make sure XLEN agrees with compilation choice
   li t0, 1
@@ -249,6 +249,8 @@ cusmain:
 _fuzz_main:
         /* Fuzz main */
         /**/
+
+j tohost_exit
 
 ret
 
