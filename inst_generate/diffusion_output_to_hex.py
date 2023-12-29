@@ -10,6 +10,7 @@ Date: 2023-07-18 16:17:51
 FilePath: /difuzz-rtl/inst_generate/diffusion_output_to_hex.py
 Description: 组合多个脚本，从diffusion model的原始输出生成hex
 
+
 '''
 
 import os
@@ -59,12 +60,12 @@ def format_output(filepath):
             text[i] = text[i].replace("<sep> ", "\n")   #带空格
             text[i] = text[i].replace("<sep>", "")    #不带空格
         
-    with open(filepath.split(".")[0]+"edited.txt", "w+") as f:
+    with open(filepath.split(".")[0]+"edited1.txt", "w+") as f:
         for line in text:
             f.write(line)
             f.write("\n")
     
-    with open(filepath.split(".")[0]+"edited.txt", "r") as f:
+    with open(filepath.split(".")[0]+"edited1.txt", "r") as f:
         return f.readlines()        #读取后字符串内部的\n会断开
     
 def group_command(lines):
@@ -180,12 +181,12 @@ if __name__=="__main__":
     # 返回值中
     formatted_lines = format_output(filepath)
     dataset = group_command(formatted_lines)
-    for i,data in enumerate(dataset):
-        assembly = generate_source(data)
-        fd = open("output_source/source"+str(i)+".S", 'w')
-        fd.writelines(assembly)
-        fd.close()
-        # s_to_hex("output_source/source"+str(i)+".S")
+    # for i,data in enumerate(dataset):
+    #     assembly = generate_source(data)
+    #     fd = open("output_source/source"+str(i)+".S", 'w')
+    #     fd.writelines(assembly)
+    #     fd.close()
+    #     # s_to_hex("output_source/source"+str(i)+".S")
     
     pass
 

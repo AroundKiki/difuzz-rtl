@@ -3,6 +3,8 @@ Author: Xutong
 Date: 2023-05-31 02:45:35
 FilePath: /difuzz-rtl/inst_generate/main.py
 Description: 随机生成初始数据集
+
+生成用于模型初始训练的随机数据集，利用difuzzrtl的方法
 '''
 import sys
 sys.path.append("/root/workDir/difuzz-rtl/Fuzzer1")

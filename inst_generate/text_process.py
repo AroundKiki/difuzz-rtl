@@ -6,6 +6,9 @@ Description:
     删除生成内容里的<cls> 和<sep>，并让指令之间换行
     不同的数据之间用空行分开
     输出edited_output.txt
+
+
+部分功能合并到diffusion_output_to_hex中，但可以单独使用
 '''
 import os
 

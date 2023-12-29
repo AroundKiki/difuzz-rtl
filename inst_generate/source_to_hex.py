@@ -1,3 +1,5 @@
+#已被makefile的编译替代
+
 import subprocess
 
 cc = 'riscv64-unknown-elf-gcc'
